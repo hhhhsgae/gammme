@@ -13,7 +13,6 @@
   import { getDatabase, ref, set, onValue, remove, get }
       from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-  // ========== СІЗДІҢ КОНФИГУРАЦИЯҢЫЗ (ТОЛЫҚ) ==========
   const firebaseConfig = {
     apiKey: "AIzaSyDcqZCyq5zpXGrB7rvb9LH5LCyH6-66cWs",
     authDomain: "project-6073527408139957587.firebaseapp.com",
@@ -23,7 +22,6 @@
     messagingSenderId: "909781471161",
     appId: "1:909781471161:web:a28cca66e2890605513068"
   };
-  // =================================================
 
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
@@ -480,26 +478,26 @@ const CATS = [
     subs:[
       { id:'jumbaq', icon:'auto_fix_high', iconColor:'#e879f9', name:'Жұмбақтар',
         qs:[
-{pts:10, q:'<img src="images/jumbaq1.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:20, q:'<img src="images/jumbaq2.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:30, q:'<img src="images/jumbaq3.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:40, q:'<img src="images/jumbaq4.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
+          {pts:10, q:'<img src="images/jumbaq1.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) Мұз','Б) Әйнек','В) Тас','Г) Темір'], ok:0, law:'Жауап: Мұз.'},
+          {pts:20, q:'<img src="images/jumbaq2.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) Құс','Б) Балық','В) Көбелек','Г) Жарқанат'], ok:1, law:'Жауап: Балық.'},
+          {pts:30, q:'<img src="images/jumbaq3.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) Бүркіт','Б) Үкі','В) Қарға','Г) Сауысқан'], ok:1, law:'Жауап: Үкі.'},
+          {pts:40, q:'<img src="images/jumbaq4.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) Тіл','Б) Жел','В) Дыбыс','Г) Сөз'], ok:3, law:'Жауап: Сөз.'}
         ]
       },
       { id:'logika', icon:'extension', iconColor:'#22d3ee', name:'Логика',
         qs:[
-{pts:10, q:'<img src="images/logika1.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:20, q:'<img src="images/logika2.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:30, q:'<img src="images/logika3.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
-{pts:40, q:'<img src="images/logika4.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', ...},
+          {pts:10, q:'<img src="images/logika1.jpg" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) 38','Б) 40','В) 42','Г) 45'], ok:1, law:'8+11+21=40'},
+          {pts:20, q:'<img src="images/logika2.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) 48','Б) 55','В) 99','Г) 36'], ok:1, law:'11x5=55'},
+          {pts:30, q:'<img src="images/logika3.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) 23','Б) 30','В) 25','Г) 26'], ok:2, law:'16+9=25'},
+          {pts:40, q:'<img src="images/logika4.png" style="max-width:100%;border-radius:12px;cursor:pointer;" onclick="openFullImage(this.src)">', opts:['А) 394','Б) 694','В) 349','Г) 963'], ok:0, law:'394'}
         ]
       },
       { id:'tapqyr', icon:'lightbulb', iconColor:'#fde047', name:'Тапқырлық',
         qs:[
-          {pts:10, type:'judge', q:'Мақалды аяқтаңыз: «Жаманнан...»', answer:'Жаманнан жартыаяқ ас қалады.', law:'Толық мақал.'},
-          {pts:20, type:'judge', q:'Мақалды аяқтаңыз: «Отыз тістен...»', answer:'Отыз тістен шыққан сөз отыз рулы елге тарайды.', law:'Толық мақал.'},
-          {pts:30, type:'judge', q:'Мақалды аяқтаңыз: «Сырлы аяқтың...»', answer:'Сырлы аяқтың сыры кетсе де, сыны кетпейді.', law:'Толық мақал.'},
-          {pts:40, type:'judge', q:'Мақалды аяқтаңыз: «Құтты қонақ келсе...»', answer:'Құтты қонақ келсе, қой егіз табар.', law:'Толық мақал.'}
+          {pts:10, type:'judge', q:'Мақалды аяқтаңыз: «Жаманнан...»', answer:'Жаманнан жартыаяқ ас қалады.', law:'Толық мақал: Жаманнан жартыаяқ ас қалады.'},
+          {pts:20, type:'judge', q:'Мақалды аяқтаңыз: «Отыз тістен...»', answer:'Отыз тістен шыққан сөз отыз рулы елге тарайды.', law:'Толық мақал: Отыз тістен шыққан сөз отыз рулы елге тарайды.'},
+          {pts:30, type:'judge', q:'Мақалды аяқтаңыз: «Сырлы аяқтың...»', answer:'Сырлы аяқтың сыры кетсе де, сыны кетпейді.', law:'Толық мақал: Сырлы аяқтың сыры кетсе де, сыны кетпейді.'},
+          {pts:40, type:'judge', q:'Мақалды аяқтаңыз: «Құтты қонақ келсе...»', answer:'Құтты қонақ келсе, қой егіз табар.', law:'Толық мақал: Құтты қонақ келсе, қой егіз табар.'}
         ]
       }
     ]
