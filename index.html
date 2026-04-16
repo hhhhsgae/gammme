@@ -537,10 +537,21 @@ function initMain() {
   const db = window._db;
   const teamsRef = window._ref(db, 'teams');
   
-  window._onVal(teamsRef, (snap) => {
-    currentTeams = snap.val() || {};
-    renderTeams();
+window._onVal(teamsRef, (snap) => {
+  const rawData = snap.val() || {};
+  
+  // 🔥 КОНСОЛЬГЕ ШЫҒАРУ - НЕ КЕЛІП ЖАТЫР?
+  console.log('📡 Firebase-тен келген деректер:', rawData);
+  console.log('📋 Командалар саны:', Object.keys(rawData).length);
+  
+  // Әр команданы жеке шығару
+  Object.entries(rawData).forEach(([id, team]) => {
+    console.log(`🆔 ${id} → "${team.name}" | ${team.members?.length || 0} мүше`);
   });
+  
+  currentTeams = rawData;
+  renderTeams();
+});
   
   function teamList() {
     return Object.values(currentTeams).sort((a, b) => a.ts - b.ts);
